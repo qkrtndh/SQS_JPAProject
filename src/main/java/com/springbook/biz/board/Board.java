@@ -1,9 +1,13 @@
 package com.springbook.biz.board;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entity implementation class for Entity: Board
@@ -11,7 +15,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "BOARD")
-public class Board{
+public class Board {
 	@Id
 	@GeneratedValue
 	private int seq;
@@ -21,9 +25,9 @@ public class Board{
 	@Temporal(TemporalType.DATE)
 	private Date regDate = new Date();
 	private int cnt;
-	
-	//getter setter 
-	
+
+	// Getter/Setter 메소드	
+
 	public int getSeq() {
 		return seq;
 	}
@@ -70,11 +74,11 @@ public class Board{
 
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
-	}
-
+	}	
+	
 	@Override
 	public String toString() {
-		return "Board [seq="+seq+", title="+title+", writer="+writer+", content="+content+", regDate="+regDate+", cnt="+cnt+"]";
+		return "Board [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
+				+ regDate + ", cnt=" + cnt + "]";
 	}
-   
 }
